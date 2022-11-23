@@ -13,5 +13,15 @@ UCLASS()
 class SUPERMARIO_API AMarioCharacter : public APaperCharacter
 {
 	GENERATED_BODY()
+protected:
+	virtual void BeginPlay() override;
+
+	void BindInputComponent();
+
+	//响应用户输入轴值事件
+	void MoveRight(float Value);
+	
+public:
+	virtual void Tick(float DeltaSeconds) override;
 	
 };
